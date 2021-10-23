@@ -88,7 +88,12 @@ macro_rules! check {
                 } else if self.0.as_micros() != 0 {
                     write!(f, "{} {}", self.0.as_micros().green(), "us".green())
                 } else {
-                    write!(f, "{} {}", self.0.as_nanos(), "ns".rgb_fg(255, 255, 255))
+                    write!(
+                        f,
+                        "{} {}",
+                        self.0.as_nanos().rgb_fg(255, 255, 255),
+                        "ns".rgb_fg(255, 255, 255)
+                    )
                 }
             }
         }
